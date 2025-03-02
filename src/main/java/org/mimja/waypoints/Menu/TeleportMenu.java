@@ -2,7 +2,7 @@ package org.mimja.waypoints.Menu;
 
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.*;
-import org.bukkit.entity.ArmorStand;
+
 import org.bukkit.entity.BlockDisplay;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

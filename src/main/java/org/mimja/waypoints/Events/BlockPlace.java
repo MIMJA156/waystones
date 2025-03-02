@@ -3,7 +3,6 @@ package org.mimja.waypoints.Events;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.WorldCreator;
 import org.bukkit.block.Block;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
