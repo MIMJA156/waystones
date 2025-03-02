@@ -1,4 +1,0 @@
-name: waypoints
-version: '1.0-SNAPSHOT'
-main: org.mimja.waypoints.Waypoints
-api-version: '1.21'
