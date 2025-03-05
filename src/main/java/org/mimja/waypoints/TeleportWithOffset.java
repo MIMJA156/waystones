@@ -10,12 +10,12 @@ public class TeleportWithOffset {
     private static final Random RANDOM = new Random();
 
     private static Location getRandomLocation(Location location) {
-        int offsetX = RANDOM.nextInt(3) - 1;
-        int offsetZ = RANDOM.nextInt(3) - 1;
+        int offsetX = 0;
+        int offsetZ = 0;
 
         while (offsetX == 0 && offsetZ == 0) {
-            offsetX = RANDOM.nextInt(3) - 1;
-            offsetZ = RANDOM.nextInt(3) - 1;
+            offsetX = RANDOM.nextInt(2);
+            offsetZ = RANDOM.nextInt(2);
         }
 
         return new Location(
@@ -28,9 +28,12 @@ public class TeleportWithOffset {
 
     public static void teleportWithRandomOffset(Player player, Location destination) {
         Location loc = getRandomLocation(destination);
+        Location upLoc = loc.clone().add(0, 1, 0);
+
         int limit = 50;
-        while (limit > 0 && (loc.getBlock().getType() != Material.AIR || loc.add(0, 1, 0).getBlock().getType() != Material.AIR)) {
-            loc = getRandomLocation(loc);
+        while (limit > 0 && (loc.getBlock().getType().isSolid() || upLoc.getBlock().getType().isSolid())) {
+            loc = getRandomLocation(destination);
+            upLoc = loc.clone().add(0, 1, 0);
             limit -= 1;
         }
         player.teleport(loc);
