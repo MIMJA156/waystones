@@ -1,16 +1,16 @@
-package org.mimja.waypoints.Events;
+package org.mimja.waystones.Events;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
-import org.mimja.waypoints.Menu.TeleportMenu;
-import org.mimja.waypoints.Waypoints;
+import org.mimja.waystones.Menu.TeleportMenu;
+import org.mimja.waystones.Waystones;
 
 import java.io.IOException;
 
 public class InventoryClick implements Listener {
-    public InventoryClick(Waypoints waypoints) {}
+    public InventoryClick(Waystones waystones) {}
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) throws IOException {

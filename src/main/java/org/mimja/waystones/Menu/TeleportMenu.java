@@ -1,4 +1,4 @@
-package org.mimja.waypoints.Menu;
+package org.mimja.waystones.Menu;
 
 import net.wesjd.anvilgui.AnvilGUI;
 import org.bukkit.*;
@@ -13,12 +13,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-import org.mimja.waypoints.Items.WaypointItem;
-import org.mimja.waypoints.PluginNamespace;
-import org.mimja.waypoints.Storage.StorageTools;
-import org.mimja.waypoints.Storage.WaypointDataModel;
-import org.mimja.waypoints.TeleportWithOffset;
-import org.mimja.waypoints.Waypoints;
+import org.mimja.waystones.Items.WaystoneItem;
+import org.mimja.waystones.PluginNamespace;
+import org.mimja.waystones.Storage.StorageTools;
+import org.mimja.waystones.Storage.WaystoneDataModel;
+import org.mimja.waystones.TeleportWithOffset;
+import org.mimja.waystones.Waystones;
 
 import java.io.IOException;
 import java.util.*;
@@ -64,13 +64,13 @@ public class TeleportMenu implements InventoryHolder {
 
         int offset = (page - 1) * 9;
         for (int i = 0; i < 9; i++) {
-            ArrayList<WaypointDataModel> waypointDataModels = StorageTools.WaypointData.getWaypointDataModels();
-            if (waypointDataModels.size() > offset + i) {
+            ArrayList<WaystoneDataModel> waystoneDataModels = StorageTools.WaypointData.getWaypointDataModels();
+            if (waystoneDataModels.size() > offset + i) {
                 ItemStack teleportWaypoint = new ItemStack(Material.ENDER_EYE);
                 ItemMeta meta = teleportWaypoint.getItemMeta();
                 assert meta != null;
 
-                String chat = waypointDataModels.get(offset + i).getName();
+                String chat = waystoneDataModels.get(offset + i).getName();
                 meta.setDisplayName(chat);
                 meta.getPersistentDataContainer().set(PluginNamespace.get().getMenuItem(), PersistentDataType.INTEGER, offset + i);
                 teleportWaypoint.setItemMeta(meta);
@@ -121,11 +121,11 @@ public class TeleportMenu implements InventoryHolder {
             PersistentDataContainer container = meta.getPersistentDataContainer();
             if (container.has(PluginNamespace.get().getMenuItem(), PersistentDataType.INTEGER)) {
                 int targetIndex = container.get(PluginNamespace.get().getMenuItem(), PersistentDataType.INTEGER);
-                WaypointDataModel waypoint = StorageTools.WaypointData.getWaypointDataModel(targetIndex);
+                WaystoneDataModel waypoint = StorageTools.WaypointData.getWaypointDataModel(targetIndex);
                 if (waypoint == null) return;
 
                 Location loc = new Location(
-                        Waypoints.getPlugin().getServer().getWorld(waypoint.getWorld()),
+                        Waystones.getPlugin().getServer().getWorld(waypoint.getWorld()),
                         waypoint.getX(),
                         waypoint.getY(),
                         waypoint.getZ()
@@ -133,10 +133,10 @@ public class TeleportMenu implements InventoryHolder {
                 TeleportWithOffset.teleportWithRandomOffset(player, loc);
             }
         } else if (clicked.getType() == Material.LAVA_BUCKET) {
-            WaypointDataModel model = StorageTools.WaypointData.getWaypointDataModel(target);
+            WaystoneDataModel model = StorageTools.WaypointData.getWaypointDataModel(target);
             if (model == null) return;
 
-            World world = Waypoints.getPlugin().getServer().getWorld(model.getWorld());
+            World world = Waystones.getPlugin().getServer().getWorld(model.getWorld());
             if (world == null) return;
 
             Location loc = new Location(world, model.getX(), model.getY(), model.getZ());
@@ -152,11 +152,11 @@ public class TeleportMenu implements InventoryHolder {
                 }
             }
 
-            player.getWorld().dropItem(loc2, WaypointItem.getWaypointItem());
+            player.getWorld().dropItem(loc2, WaystoneItem.getWaypointItem());
             StorageTools.WaypointData.deleteWaypointDataModelIndex(target);
             player.closeInventory();
         } else if (clicked.getType() == Material.NAME_TAG) {
-            WaypointDataModel model = StorageTools.WaypointData.getWaypointDataModel(target);
+            WaystoneDataModel model = StorageTools.WaypointData.getWaypointDataModel(target);
             if(model == null) return;
             player.closeInventory();
 
@@ -182,7 +182,7 @@ public class TeleportMenu implements InventoryHolder {
                     })
                     .text(model.getName())
                     .title("Name Waypoint")
-                    .plugin(Waypoints.getPlugin())
+                    .plugin(Waystones.getPlugin())
                     .open(player);
         }
     }

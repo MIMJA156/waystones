@@ -1,8 +1,8 @@
-package org.mimja.waypoints.Storage;
+package org.mimja.waystones.Storage;
 
 import org.bukkit.Location;
 
-public class WaypointDataModel {
+public class WaystoneDataModel {
     String world;
     String name;
 
@@ -10,7 +10,7 @@ public class WaypointDataModel {
     double y;
     double z;
 
-    public WaypointDataModel(Location location, String world) {
+    public WaystoneDataModel(Location location, String world) {
         x = location.getBlockX();
         y = location.getBlockY();
         z = location.getBlockZ();

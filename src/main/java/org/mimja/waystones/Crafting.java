@@ -1,11 +1,11 @@
-package org.mimja.waypoints;
+package org.mimja.waystones;
 import org.bukkit.Material;
 import org.bukkit.inventory.ShapedRecipe;
-import org.mimja.waypoints.Items.WaypointItem;
+import org.mimja.waystones.Items.WaystoneItem;
 
 public class Crafting {
     static ShapedRecipe getWaypointRecipe() {
-        ShapedRecipe recipe = new ShapedRecipe(PluginNamespace.get().getRecipeKey(), WaypointItem.getWaypointItem());
+        ShapedRecipe recipe = new ShapedRecipe(PluginNamespace.get().getRecipeKey(), WaystoneItem.getWaypointItem());
 
         recipe.shape(
             "GEG",

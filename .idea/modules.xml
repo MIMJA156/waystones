@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/waypoints.iml" filepath="$PROJECT_DIR$/waypoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waystones.iml" filepath="$PROJECT_DIR$/waystones.iml" />
     </modules>
   </component>
 </project>

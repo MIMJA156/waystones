@@ -1,7 +1,6 @@
-package org.mimja.waypoints;
+package org.mimja.waystones;
 
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 import java.util.Random;

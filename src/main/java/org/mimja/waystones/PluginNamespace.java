@@ -1,4 +1,4 @@
-package org.mimja.waypoints;
+package org.mimja.waystones;
 
 import org.bukkit.NamespacedKey;
 
@@ -11,14 +11,14 @@ public class PluginNamespace {
     }
 
     public NamespacedKey getRecipeKey() {
-        return new NamespacedKey(Waypoints.getPlugin(), "waypoint_recipe");
+        return new NamespacedKey(Waystones.getPlugin(), "waypoint_recipe");
     }
 
     public NamespacedKey getItemKey() {
-        return new NamespacedKey(Waypoints.getPlugin(), "waypoint_item");
+        return new NamespacedKey(Waystones.getPlugin(), "waypoint_item");
     }
 
     public NamespacedKey getMenuItem() {
-        return new NamespacedKey(Waypoints.getPlugin(), "waypoint_menu_item");
+        return new NamespacedKey(Waystones.getPlugin(), "waypoint_menu_item");
     }
 }

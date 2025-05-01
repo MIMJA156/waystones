@@ -1,4 +1,4 @@
-package org.mimja.waypoints.Events;
+package org.mimja.waystones.Events;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -11,16 +11,16 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-import org.mimja.waypoints.PluginNamespace;
-import org.mimja.waypoints.Render.RenderTools;
-import org.mimja.waypoints.Storage.WaypointDataModel;
-import org.mimja.waypoints.Storage.StorageTools;
-import org.mimja.waypoints.Waypoints;
+import org.mimja.waystones.PluginNamespace;
+import org.mimja.waystones.Render.RenderTools;
+import org.mimja.waystones.Storage.WaystoneDataModel;
+import org.mimja.waystones.Storage.StorageTools;
+import org.mimja.waystones.Waystones;
 
 import java.io.IOException;
 
 public class BlockPlace implements Listener {
-    public BlockPlace(Waypoints waypoints) {}
+    public BlockPlace(Waystones waystones) {}
 
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) throws IOException {
@@ -40,7 +40,7 @@ public class BlockPlace implements Listener {
             Location location = block.getLocation();
             World world = location.getWorld();
 
-            WaypointDataModel newWaypoint = new WaypointDataModel(location, world.getName());
+            WaystoneDataModel newWaypoint = new WaystoneDataModel(location, world.getName());
             if(StorageTools.WaypointData.waypointExists(newWaypoint)) return;
 
             StorageTools.WaypointData.insertWaypointDataModel(newWaypoint);

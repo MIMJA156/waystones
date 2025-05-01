@@ -1,16 +1,16 @@
-package org.mimja.waypoints.Render;
+package org.mimja.waystones.Render;
 
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.util.Transformation;
 import org.joml.AxisAngle4f;
 import org.joml.Vector3f;
-import org.mimja.waypoints.Storage.WaypointDataModel;
+import org.mimja.waystones.Storage.WaystoneDataModel;
 
 import java.util.Collection;
 
 public class RenderTools {
-    public static void renderWaypoint(WaypointDataModel waypointData) {
+    public static void renderWaypoint(WaystoneDataModel waypointData) {
         World world = Bukkit.getWorld(waypointData.getWorld());
         Location loc = new Location(world, waypointData.getX(), waypointData.getY(), waypointData.getZ());
 
