@@ -1,4 +1,4 @@
 name: waystones
-version: '1.0-SNAPSHOT'
+version: '1.4-SNAPSHOT'
 main: org.mimja.waystones.Waystones
 api-version: '1.21'
