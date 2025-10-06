@@ -6,7 +6,7 @@
 
     <groupId>org.mimja</groupId>
     <artifactId>waystones</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>waystones</name>
@@ -80,7 +80,7 @@
         <dependency>
             <groupId>net.wesjd</groupId>
             <artifactId>anvilgui</artifactId>
-            <version>1.10.4-SNAPSHOT</version>
+            <version>1.10.9-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
