@@ -34,7 +34,7 @@ public class BlockPlace implements Listener {
         String storedItem = dc.get(PluginNamespace.get().getItemKey(), PersistentDataType.STRING);
         if(storedItem == null) return;
 
-        if(storedItem.equals("waypoint")) {
+        if(storedItem.equals("mimja-waystone")) {
             block.setType(Material.AIR);
 
             Location location = block.getLocation();
